@@ -1,0 +1,100 @@
+<!-- Main Section Starts Here -->
+    <section id="main-section">
+        <main>
+            <div class="main-content">
+                <!-- Left Sidebar Starts Here -->
+                <div class="left-sidebar">
+                    <div class="left-sidebar-widgets">
+                        <div class="sidebar-widget">
+                            <div class="products-by-categories-widget">
+                                <div class="widget-heading">
+                                    <h4>Categories</h4>
+                                </div>
+                                <div class="widget-body">
+                                    <ul>
+                                        <li><a href="#">Trending</a></li>
+                                        <li><a href="#">Recent Arriaval</a></li>
+                                        <li><a href="#">Top Rated</a></li>
+                                        <li><a href="#">LoremIpsum</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Left Sidebar Ends Here -->
+
+                <!-- Main-boxed-Content Starts Here -->
+                <div class="main-boxed-content">
+                    <div class="main-carousel">
+                        <!-- <ul id="lightSlider">
+                            <li>
+                                <img src="../images/lightSlider/images.jpg" alt="">
+                            </li>
+                            <li>
+                            <img src="../images/lightSlider/Alternative_web_sliders20202.jpg" alt="">
+                            </li>
+                        </ul> -->
+                        <img src="../images/lightSlider/images.jpg" alt="">
+                    </div>
+                </div>
+
+                <!-- Main-boxed-Content Ends Here -->
+
+                <!-- Right Sidebar Starts Here -->
+                <div class="right-sidebar">
+                    <div class="right-sidebar-widgets">
+                        <div class="sidebar-widget">
+                            <div class="widget-social-share">
+                                <div class="widget-heading">
+                                    <h4>Share with your friends</h4>
+                                </div>
+                                <div class="widget-body">
+                                    <ul>
+                                        <li><a href="#">
+                                            <div class="sidebar-share">
+                                                <div class="share-icon">
+                                                    <i class="fab fa-twitter" aria-hidden="true"></i>
+                                                </div>
+                                                <p>Twitter</p>
+                                            </div>
+                                        </a></li>
+                                        <li><a href="#">
+                                            <div class="sidebar-share">
+                                                <div class="share-icon">
+                                                    <i class="fab fa-facebook-f"></i>
+                                                </div>
+                                                <p>Facebook</p>
+                                            </div>
+                                        </a></li>
+            
+                                        <li><a href="#">
+                                            <div class="sidebar-share">
+                                                <div class="share-icon">
+                                                    <i class="fab fa-pinterest-p"></i>
+                                                </div>
+                                                <p>Pinterest</p>
+                                            </div>
+                                        </a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Sidebar Ends Here -->
+
+                <!-- Main-wide-Content Starts Here -->
+                <div class="main-wide-content">
+
+                </div>
+
+                <!-- Main-wide-Content Ends Here -->
+
+            </div>
+
+        </main>
+    </section>
+
+    <!-- Main Section Ends Here -->

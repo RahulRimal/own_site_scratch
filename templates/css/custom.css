@@ -14,6 +14,8 @@
 	margin: 0;
 	padding: 0;
 	font-family: 'Roboto', sans-serif;
+	scroll-behavior: smooth;
+	/* text-align: -webkit-center; */
 }
 
 body
@@ -31,7 +33,6 @@ ul
 {
 	list-style: none;
 }
-
 
 /* Important CSS sections ends here */
 
@@ -213,7 +214,6 @@ ul
 {
 	background: white;
 	padding: 15px 15%;
-	margin-top: 13px;
 
 }
 
@@ -252,18 +252,158 @@ ul
 {
 	text-align: left;
 }
-
-
 /* Header Ends Here */
+
+/* Main Sections Starts Here */
+
+#main
+{
+	overflow: hidden;
+	margin: 50px 50px;
+}
+
+.main-top-content
+{
+	width: 100%;
+}
+
+.sidebar-widget h4, .sidebar-widget a 
+{
+	text-align: left;
+}
+
+.sidebar-widget
+{
+	background: white;
+	padding: 15px 20px;
+	border-radius: 15px;
+}
+
+/* Left Sidebar Starts Here */
+
+.left-sidebar, .right-sidebar
+{
+	width: 15%;
+	display: inline;
+	float: left;
+}
+
+
+/* Left Sidebar Ends Here */
+
+
+/* Main section starts here */
+
+/* Main-boxed-Content Section Starts Here */
+
+.main-boxed-content
+{
+	width: 60%;
+	display: inline;
+	float: left;
+	padding: 0 70px;
+}
+
+.main-carousel #lightSlider
+{
+	width: 115pc;
+	/* width: 300px; */
+	height: 245px;
+}
+
+.main-carousel img
+{
+	width: 912px;
+	height: 245px;
+}
+
+.new-collection-offer-banner
+{
+	height: 60px;
+	background: var(--primary-color);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 80px;
+	margin: 20px 0;
+}
+
+.new-collection-offer-banner a
+{
+	background: white;
+	font-size: 13px;
+    padding: 10px 20px;
+	border-radius: 2px;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+}
+}
+
+/* Main-boxed-Content Section Ends Here */
+
+
+/* Right Sidebar Starts Here */
+
+
+.right-sidebar
+{
+    float: right;
+}
+
+.sidebar-share
+{
+	display: flex;
+	align-items: center;
+	border: 1px solid var(--primary-color);
+	height: 35px;
+	width: 150px;
+	padding-right: 10px;
+	border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
+}
+
+.sidebar-share .share-icon
+{
+	background:  #EBEBEB;
+	height: 100%;
+	padding-left: 17px;
+	margin-right: 5px;
+	display: flex;
+	align-items: center;
+
+}
+
+#main-section > div.right-sidebar > div > div > div > div.widget-body > ul > li:nth-child(1) > a > div > div
+{
+	padding-left: 10px;
+}
+
+.widget-social-share .widget-body a:hover .share-icon i
+{
+	color: black;
+	border: none;
+	padding: 0;
+}
+
+.widget-social-share .widget-body a:hover p
+{
+	color: var(--primary-color);
+	font-weight: bold;
+}
+/* Right Sidebar Ends Here */
+
+
+/* Main-wide-Content Section Starts Here */
+
+/* Main-wide-Content Section Ends Here */
+
+/* Main Sections Ends Here */
 
 /* Footer Starts Here */
 
 
 #footer-section
 {
-	position: fixed;
-	bottom: 0;
-	left: 0;
 	width: 100%;
 }
 
@@ -302,6 +442,19 @@ ul
 	border: 1px solid var(--primary-color);
 	padding: 4px
 }
+
+.widget-social-icons ul
+{
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.widget-social-icons ul li i:hover
+{
+	color: black;
+	border-radius: 50%;
+}
+
 
 
 .footer-bottom
