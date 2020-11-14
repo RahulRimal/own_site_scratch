@@ -16,7 +16,7 @@ $(document).ready(function() {
         auto: true,
         loop: true,
         slideEndAnimation: true,
-        pause: 2000,
+        pause: 4000,
  
         keyPress: false,
         controls: true,
@@ -55,3 +55,37 @@ $(document).ready(function() {
 
 
 // LightSlider Section Ends here
+
+
+
+
+// Trending-products LightSlider Section Starts here
+
+$(document).ready(function() {
+    $('.productsLightSlider').lightSlider({
+        item: 2,
+        autoWidth:true,
+        loop:true,
+        auto: true,
+        speed: 200,
+        pause: 4000,
+
+        pager: false,
+        controls: true,
+        pauseOnHover: true,
+
+        prevHtml: '<i class="fas fa-arrow-left"></i>',
+        nextHtml: '<i class="fas fa-arrow-right"></i>',
+
+        onBeforeStart: function (el) {},
+        onBeforeSlide: function (el) {},
+        onAfterSlide: function (el) {},
+        onBeforeNextSlide: function (el) {},
+        onBeforePrevSlide: function (el) {},
+        onSliderLoad: function() {
+            $('#productsLightSlider').removeClass('cS-hidden');
+        } 
+    });  
+  });
+
+// Trending-products LightSlider Section Ends here
