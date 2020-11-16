@@ -89,3 +89,83 @@ $(document).ready(function() {
   });
 
 // Trending-products LightSlider Section Ends here
+
+// Scroll to top Starts Here 
+
+window.onload = function()
+{
+    let scrollToTop =  document.querySelector(".scroll-to-top");
+
+    scrollToTop.addEventListener('click', function()
+{
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+})
+}
+
+window.onscroll = function(){
+    let scrollToTop =  document.querySelector(".scroll-to-top");
+    if(document.body.scrollTop > 1000 || document.documentElement.scrollTop > 1000)
+    {
+        scrollToTop.style.display = "block";
+    }
+    else
+    {
+        scrollToTop.style.display = "none";
+    }
+}
+
+// Scroll to top Ends Here 
+
+
+window.onload = function()
+{
+    // product description and product review tabs starts here
+
+    let descBtn = document.querySelector(".product-desc-btn");
+    let reviewBtn = document.querySelector(".product-review-btn");
+
+    let descBody = document.querySelector(".product-full-description-body");
+    let reviewBody = document.querySelector(".product-review-body");
+
+    descBtn.addEventListener('click', function()
+    {
+        if(descBtn.classList.contains("active-tab"))
+        {
+            if(reviewBtn.classList.contains("active-tab"))
+            {
+                reviewBtn.classList.remove("active-tab");
+                reviewBody.style.display = "none";
+            }
+        }
+        else
+        {
+            descBtn.classList.add("active-tab");   
+            reviewBtn.classList.remove("active-tab");
+            descBody.style.display = "block"
+            reviewBody.style.display = "none"
+        }
+    })
+
+    reviewBtn.addEventListener('click', function()
+    {
+        if(reviewBtn.classList.contains("active-tab"))
+        {
+            if(descBtn.classList.contains("active-tab"))
+            {
+                descBtn.classList.remove("active-tab");
+                descBody.style.display = "none"
+            }
+        }
+        else
+        {
+            reviewBtn.classList.add("active-tab");   
+            descBtn.classList.remove("active-tab");
+            reviewBody.style.display = "block"
+            descBody.style.display = "none"
+        }
+    })
+
+    // product description and product review tabs ends here
+
+}
