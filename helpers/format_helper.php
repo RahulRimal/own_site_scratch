@@ -7,6 +7,11 @@ function formatDate($date){
 	return $date;
 }
 
+function CustomFormatDate($date){
+	$date = date("F j, Y",strtotime($date));
+	return $date;
+}
+
 /*
  * URL Format
  */

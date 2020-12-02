@@ -92,16 +92,24 @@ $(document).ready(function() {
 
 // Scroll to top Starts Here 
 
-window.onload = function()
-{
-    let scrollToTop =  document.querySelector(".scroll-to-top");
+let scrollToTop =  document.querySelector(".scroll-to-top");
 
     scrollToTop.addEventListener('click', function()
 {
     document.body.scrollTop = 0;
     document.documentElement.scrollTop = 0;
 })
-}
+
+// window.onload = function()
+// {
+//     let scrollToTop =  document.querySelector(".scroll-to-top");
+
+//     scrollToTop.addEventListener('click', function()
+// {
+//     document.body.scrollTop = 0;
+//     document.documentElement.scrollTop = 0;
+// })
+// }
 
 window.onscroll = function(){
     let scrollToTop =  document.querySelector(".scroll-to-top");
@@ -118,54 +126,148 @@ window.onscroll = function(){
 // Scroll to top Ends Here 
 
 
+//Product Wishlist starts here
+
 window.onload = function()
 {
-    // product description and product review tabs starts here
 
-    let descBtn = document.querySelector(".product-desc-btn");
-    let reviewBtn = document.querySelector(".product-review-btn");
-
-    let descBody = document.querySelector(".product-full-description-body");
-    let reviewBody = document.querySelector(".product-review-body");
-
-    descBtn.addEventListener('click', function()
+    var wishVar = document.querySelectorAll('.product-add-wishlist')
+    wishVar.forEach(function(wishlistIcon)
     {
-        if(descBtn.classList.contains("active-tab"))
+        var iconn = wishlistIcon.querySelector('.fa-heart');
+        var wishlistText = wishlistIcon.querySelector('.wishlist-text');
+        wishlistIcon.addEventListener('click', function()
         {
-            if(reviewBtn.classList.contains("active-tab"))
-            {
-                reviewBtn.classList.remove("active-tab");
-                reviewBody.style.display = "none";
-            }
-        }
-        else
-        {
-            descBtn.classList.add("active-tab");   
-            reviewBtn.classList.remove("active-tab");
-            descBody.style.display = "block"
-            reviewBody.style.display = "none"
-        }
+            // iconn.classList.toggle('far');
+            // iconn.classList.toggle('fas');
+            iconn.classList.remove('far');
+            iconn.classList.add('fas');
+            iconn.textContent = "Wishlisted";
+            
+        })
     })
-
-    reviewBtn.addEventListener('click', function()
-    {
-        if(reviewBtn.classList.contains("active-tab"))
-        {
-            if(descBtn.classList.contains("active-tab"))
-            {
-                descBtn.classList.remove("active-tab");
-                descBody.style.display = "none"
-            }
-        }
-        else
-        {
-            reviewBtn.classList.add("active-tab");   
-            descBtn.classList.remove("active-tab");
-            reviewBody.style.display = "block"
-            descBody.style.display = "none"
-        }
-    })
-
-    // product description and product review tabs ends here
 
 }
+//Product Wishlist ends here
+
+
+// Item Count Incrementor Decrementor starts here 
+
+function incrementItemCount()
+{
+    let itemCountString = document.querySelector('.current-product-count');
+    let itemCount = parseInt(itemCountString.innerText);
+    itemCount = itemCount + 1;
+    itemCountString.innerText = itemCount.toString();
+    console.log(itemCount);
+}
+
+function decrementItemCount()
+{
+    let itemCountString = document.querySelector('.current-product-count');
+    let itemCount = parseInt(itemCountString.innerText);
+    if(itemCount === 1)
+    {
+        itemCount = 1;
+    }
+    else
+    {
+        itemCount = itemCount - 1;
+    }
+
+    itemCountString.innerText = itemCount.toString();
+    console.log(itemCount);
+}
+
+
+
+// Item Count Incrementor Decrementor ends here 
+
+
+
+
+// Product image gallery starts here
+
+window.onload = function()
+{
+    refreshImages();
+}
+
+function setActiveImage(thisImage)
+{
+        // let overlay = image.nextElementSibling;
+        // console.log(overlay);
+        let product = document.querySelector('.product-img-gallery');
+
+        let galleryImages = product.querySelectorAll('.gallery-img-div');
+
+        galleryImages.forEach(function(galleryImage)
+        {
+            let deleteOverlay = galleryImage.classList.remove('active-image');
+        })
+        let selectedImage = thisImage.parentNode;
+        selectedImage.classList.add('active-image');
+        console.log(selectedImage);
+
+        let mainImage = document.querySelector('.main-product-image');
+        mainImage.src = thisImage.src;
+
+        refreshImages();
+}
+
+function refreshImages()
+{
+        let product = document.querySelector('.product-img-gallery');
+
+        let galleryImages = product.querySelectorAll('.gallery-img-div');
+
+        galleryImages.forEach(function(galleryImage)
+        {
+            let overlay = galleryImage.querySelector('.gallery-overlay');
+            let image = galleryImage.querySelector('.gallery-img');
+
+            if(galleryImage.classList.contains('active-image'))
+            {
+                overlay.classList.add('gallery-img-overlay');
+                overlay.classList.remove('gallery-img-overlay-inactive');   
+            }
+            else
+            {
+                overlay.classList.remove('gallery-img-overlay');
+                overlay.classList.remove('gallery-img-overlay-inactive');
+                overlay.classList.add('gallery-img-overlay-inactive');
+            }
+        })
+
+}
+// Product image gallery ends here
+
+
+// product description and product review tabs starts here
+
+function showFullDescription(descBtn)
+{
+    let descBody = document.querySelector(".product-full-description-body");
+    let reviewBtn = document.querySelector(".product-review-btn");
+    let reviewBody = document.querySelector(".product-review-body");
+
+    reviewBtn.classList.remove('active-tab');
+    reviewBody.style.display = 'none';
+    descBtn.classList.add('active-tab');
+    descBody.style.display = 'block';
+
+}
+
+function showFullReview(reviewBtn)
+{
+    let descBody = document.querySelector(".product-full-description-body");
+    let descBtn = document.querySelector(".product-desc-btn");
+    let reviewBody = document.querySelector(".product-review-body");
+
+    descBtn.classList.remove('active-tab');
+    descBody.style.display = 'none';
+    reviewBtn.classList.add('active-tab');
+    reviewBody.style.display = 'block';
+    
+}
+// product description and product review tabs ends here

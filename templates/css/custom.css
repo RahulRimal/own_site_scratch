@@ -202,7 +202,7 @@ ul
 {
 	position: absolute;
     top: 44px;
-    left: 95%;
+    left: 94%;
 	background: red;
 	color: white;
     border-radius: 50px;
@@ -383,15 +383,21 @@ ul
 	padding: 10px;
 }
 
-.product-box
+.product-box	
 {
 	text-align: center;
 	background: white;
 	width: 175px;
 	height: 390px;
-	padding: 10px 0;
+	padding: 10px 15px;
+	border-radius: 15px;
 	margin: 10px 10px;
 	position: relative;
+}
+
+.product-box:hover
+{
+	box-shadow: -1px 13px 28px 0px rgba(50, 50, 50, 0.52);
 }
 
 .product-box div
@@ -445,17 +451,30 @@ ul
 .product-add-wishlist
 {
 	position: absolute;
-	right: 0;
-	top: 0;
+	right: 10px;
+	top: 5px;
 	color: var(--primary-hover-color);
-	display: none;
+	visibility: hidden;
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	background: white;
+    border-radius: 15px;
+    padding: 5px 5px 0;
+
 }
 
 .product-box:hover .product-quick-view, .product-box:hover .product-sale, .product-box:hover .product-add-wishlist
 {
 	display: block;
+	visibility: visible;
 }
 
+.product-add-wishlist:hover
+{
+	cursor: pointer!important;
+	color: var(--primary-color)!important;
+}
 
 .product-box button
 {
@@ -760,7 +779,7 @@ ul
 	align-items: center;
 }
 
-.filter-info button, .product-add-to-cart button, .update-cart button, .apply-coupon-section button, .proceed-to-checkout button
+.filter-info button, .product-add-to-cart button, .update-cart button, .apply-coupon-section button, .proceed-to-checkout button, .give-review button
 {
 	padding: 4px 15px;
 	border: none;
@@ -770,7 +789,7 @@ ul
 	letter-spacing: 1px;
 }
 
-.filter-info button:hover, .product-add-to-cart button:hover, .update-cart button:hover, .apply-coupon-section button:hover, .proceed-to-checkout button:hover
+.filter-info button:hover, .product-add-to-cart button:hover, .update-cart button:hover, .apply-coupon-section button:hover, .proceed-to-checkout button:hover, .give-review button:hover
 {
 	background: black;
 	cursor: pointer;
@@ -888,7 +907,7 @@ ul
 {
 	width: 225px;
 	height: 350px;
-	padding: 25px 0;
+	padding: 30px 15px;
 }
 
 .shop-main-boxed-content .product-quick-view
@@ -947,6 +966,7 @@ ul
 .product-description-section
 {
 	width: 61%;
+	text-align: left;
 }
 
 .product-description-section .product-description
@@ -981,6 +1001,8 @@ ul
 {
 	display: flex;
 	justify-content: flex-start;
+	font-size: 10px;
+	margin-top: -20px!important;
 }
 
 
@@ -1101,6 +1123,11 @@ ul
 	border: 2px solid var(--primary-color);
 }
 
+.product-incre-decre button:focus
+{
+	outline: none;
+}
+
 .product-incre-decre .current-product-count
 {
 	padding: 4px 15px;
@@ -1127,7 +1154,7 @@ ul
 
 }
 
-.gallery-img
+.gallery-img-div
 {
 	position: relative;
 }
@@ -1144,7 +1171,7 @@ ul
 	cursor: pointer;
 }
 
-.gallery-img:hover .gallery-img-overlay-inactive
+.gallery-img-div:hover .gallery-img-overlay-inactive
 {
 	display: none;
 } 
