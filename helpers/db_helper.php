@@ -86,6 +86,26 @@ function getCategories(){
 	return $results;
 }
 
+function getProductCategories($categoryId){
+	$db = new Database();
+	$db->query('SELECT * FROM `category` WHERE id = :categoryId');
+	$db->bind('categoryId', $categoryId);
+	//Assign Result Set
+	$results = $db->resultset();
+
+	return $results;
+}
+
+function getSubCategories($parentId){
+	$db = new Database();
+	$db->query('SELECT * FROM `sub_category` WHERE parent_category_id = :parentId');
+	$db->bind('parentId', $parentId);
+	//Assign Result Set
+	$results = $db->resultset();
+
+	return $results;
+}
+
 function productCountByCategory($categoryId)
 {
 	$db = new Database();
@@ -94,4 +114,21 @@ function productCountByCategory($categoryId)
 	$db->execute();
 
 	return $db->rowCount();
+}
+
+function productCountBySubCategory($subCategoryId)
+{
+	$db = new Database();
+	$db->query('SELECT * FROM product WHERE sub_category_id=:subCategoryId');
+	$db->bind('subCategoryId', $subCategoryId);
+	$db->execute();
+
+	return $db->rowCount();
+}
+
+function topRatedproducts()
+{
+	$db = new Database();
+    $db->query("SELECT * FROM `product`  ORDER BY average_rating DESC");
+    return $db->resultset();
 }

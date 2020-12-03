@@ -61,26 +61,40 @@
                                     <?php endif;?>
                                     
                                 </div>
-                                <div class="product-tags">
+                                <div class="product-categories">
                                     <a href="#">Jackets,</a>
                                     <a href="#">Men</a>
                                 </div>
                                 <div class="product-name">
-                                    <a href="#"><?php echo $product->name;?></a>
+                                    <a href="product.php?product=<?php echo $product->id?>"><?php echo $product->name;?></a>
                                 </div>
                                 <div class="product-price">
                                     <?php if($product->on_sale):?>
-                                        <span>Rs.2500</span> Rs.2000
+                                        <span><?php echo $product->regular_price;?></span> Rs.<?php echo $product->sale_price;?>
                                     <?php else:?>
                                         Rs.<?php echo $product->regular_price;?>
                                     <?php endif;?>
                                 </div>
                                 <div class="product-rating">
-                                    <i class="fas fa-star rated"></i>
-                                    <i class="fas fa-star rated"></i>
-                                    <i class="fas fa-star rated"></i>
-                                    <i class="fas fa-star unrated"></i>
-                                    <i class="fas fa-star unrated"></i>
+                                <?php
+                                            if($product->average_rating > 5)
+                                            {
+                                                $rating = 5;
+                                            }
+                                            else
+                                            {
+                                                $rating = $product->average_rating;
+                                            }
+                                            for($i = 0; $i < $rating; $i++):?>
+                                                <i class="fas fa-star rated"></i>
+                                        <?php endfor;?>
+
+                                        <?php if($i < 5):?>
+                                            <?php $j = 4 - $i;
+                                                for($k = 0; $k <=  $j; $k++):?>
+                                                    <i class="fas fa-star unrated"></i>
+                                            <?php endfor;?>
+                                        <?php endif;?>
                                 </div>
                                 <div class="product-add-cart-button">
                                     <button>Add to cart</button>
@@ -144,26 +158,40 @@
                                     <?php endif;?>
                                     
                                 </div>
-                                <div class="product-tags">
+                                <div class="product-categories">
                                     <a href="#">Jackets,</a>
                                     <a href="#">Men</a>
                                 </div>
                                 <div class="product-name">
-                                    <a href="#"><?php echo $product->name;?></a>
+                                    <a href="product.php?product=<?php echo $product->id?>"><?php echo $product->name;?></a>
                                 </div>
                                 <div class="product-price">
                                     <?php if($product->on_sale):?>
-                                        <span>Rs.2500</span> Rs.2000
+                                        <span><?php echo $product->regular_price;?></span> Rs.<?php echo $product->sale_price;?>
                                     <?php else:?>
                                         Rs.<?php echo $product->regular_price;?>
                                     <?php endif;?>
                                 </div>
                                 <div class="product-rating">
-                                    <i class="fas fa-star rated"></i>
-                                    <i class="fas fa-star rated"></i>
-                                    <i class="fas fa-star rated"></i>
-                                    <i class="fas fa-star unrated"></i>
-                                    <i class="fas fa-star unrated"></i>
+                                <?php
+                                            if($product->average_rating > 5)
+                                            {
+                                                $rating = 5;
+                                            }
+                                            else
+                                            {
+                                                $rating = $product->average_rating;
+                                            }
+                                            for($i = 0; $i < $rating; $i++):?>
+                                                <i class="fas fa-star rated"></i>
+                                        <?php endfor;?>
+
+                                        <?php if($i < 5):?>
+                                            <?php $j = 4 - $i;
+                                                for($k = 0; $k <=  $j; $k++):?>
+                                                    <i class="fas fa-star unrated"></i>
+                                            <?php endfor;?>
+                                        <?php endif;?>
                                 </div>
                                 <div class="product-add-cart-button">
                                     <button>Add to cart</button>
@@ -230,26 +258,40 @@
                                     <?php endif;?>
                                     
                                 </div>
-                                <div class="product-tags">
+                                <div class="product-categories">
                                     <a href="#">Jackets,</a>
                                     <a href="#">Men</a>
                                 </div>
                                 <div class="product-name">
-                                    <a href="#"><?php echo $product->name;?></a>
+                                    <a href="product.php?product=<?php echo $product->id?>"><?php echo $product->name;?></a>
                                 </div>
                                 <div class="product-price">
                                     <?php if($product->on_sale):?>
-                                        <span>Rs.2500</span> Rs.2000
+                                        <span><?php echo $product->regular_price;?></span> Rs.<?php echo $product->sale_price;?>
                                     <?php else:?>
                                         Rs.<?php echo $product->regular_price;?>
                                     <?php endif;?>
                                 </div>
                                 <div class="product-rating">
-                                    <i class="fas fa-star rated"></i>
-                                    <i class="fas fa-star rated"></i>
-                                    <i class="fas fa-star rated"></i>
-                                    <i class="fas fa-star unrated"></i>
-                                    <i class="fas fa-star unrated"></i>
+                                    <?php
+                                        if($product->average_rating > 5)
+                                        {
+                                            $rating = 5;
+                                        }
+                                        else
+                                        {
+                                            $rating = $product->average_rating;
+                                        }
+                                        for($i = 0; $i < $rating; $i++):?>
+                                            <i class="fas fa-star rated"></i>
+                                        <?php endfor;?>
+
+                                        <?php if($i < 5):?>
+                                            <?php $j = 4 - $i;
+                                                for($k = 0; $k <=  $j; $k++):?>
+                                                    <i class="fas fa-star unrated"></i>
+                                            <?php endfor;?>
+                                        <?php endif;?>
                                 </div>
                                 <div class="product-add-cart-button">
                                     <button>Add to cart</button>

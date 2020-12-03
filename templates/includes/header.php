@@ -42,7 +42,7 @@
         <div class="header-content">
             <div class="main-header">
                 <div class="header-logo-section">
-                    <img src="<?php echo BASE_URI;?>images/logo.png" alt="">
+                    <img src="<?php echo BASE_URI;?>images/logoalternate.png" alt="">
                 </div>
                 <div class="header-search-section">
                    <form action="#">
@@ -60,21 +60,20 @@
                 <div class="header-breadcrumbs-sectios">
                     <div class="header-wishlist">
                         <p>My Favourite</p>
-                        <a href=""><h5>Wishlist <i aria-hidden="true" class="far fa-heart"></i></h5></a>
-                    </a>
-                    </a>
+                        <a href="">
+                            <h5>Wishlist <i aria-hidden="true" class="far fa-heart"></i>
+                            </h5>
+                        </a>
                     </div>
+
                     <div class="header-account">
                         <p>Login/SignUp</p>
                         <a href=""><h5>My Account <i aria-hidden="true" class="fas fa-lock"></i></h5></a>
-                    </a>
-                    </a>
                     </div>
                     <div class="header-cart">
                         <a href=""><i class="fas fa-shopping-cart"></i>
-                        <h6 class="cart-item-count">0</h6></a>
-                    </a>
-                    </a>
+                            <h6 class="cart-item-count">0</h6>
+                        </a>
                     </div>
                 </div>
             </div>

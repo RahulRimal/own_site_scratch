@@ -1,0 +1,16 @@
+<?php foreach(getSubCategories($category->id) as $subCategory):?>    
+                                        <li class="shop-sub-category hide-this">
+                                            <a href="<?php echo BASE_URI;?>store.php?subcategory=<?php echo $subCategory->id?>" class="shop-product-sub-category">
+                                                <div class="sub-category-name">
+                                                    <div class="category-radio">
+                                                    </div>
+                                                    <p>
+                                                        <?php echo $subCategory->name;?>
+                                                    </p>
+                                                </div>
+                                                <div class="sub-category-item-count">
+                                                <?php echo productCountBySubCategory($category->id);?>
+                                                </div>
+                                            </a>
+                                        </li>
+                                    <?php endforeach;?>

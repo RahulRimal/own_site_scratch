@@ -25,10 +25,17 @@ class Product
         return $product;
     }
 
-    public function relatedProductByCategory($categoryId)
+    public function productByCategory($categoryId)
     {
         $this->db->query("SELECT * FROM `product` WHERE category_id = :cateegoryId");
         $this->db->bind('cateegoryId',$categoryId);
+        return $this->db->resultset();
+    }
+
+    public function productBySubCategory($subCategoryId)
+    {
+        $this->db->query("SELECT * FROM `product` WHERE sub_category_id = :subCategoryId");
+        $this->db->bind('subCategoryId',$subCategoryId);
         return $this->db->resultset();
     }
 

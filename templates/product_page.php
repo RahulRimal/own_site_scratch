@@ -13,36 +13,42 @@
                     </div>
 
                     <div class="product-description-section">
-                        <div class="product-tags">
-                            <a href="#">Jackets,</a>
-                            <a href="#">Men</a>
-                        </div>
+                        <?php foreach(getProductCategories($product->category_id) as $category):?>
+                            <div class="product-categories">
+                                <a href=""><?php echo $category->name;?> </a>
+                                <div class="product-sub-categories">
+                                    <?php foreach(getSubCategories($category->id) as $subCategory):?>
+                                        <a href=""><?php echo $subCategory->name;?></a>
+                                    <?php endforeach;?>
+                                </div>
+                            </div>
+                        <?php endforeach;?>
 
                         <div class="product-name">
-                            <a href="#"><?php echo $product->name;?></a>
+                            <a><?php echo $product->name;?></a>
                         </div>
 
                         <div class="product-rating-section">
                             <div class="product-rating">
-                            <?php
-                                if($product->average_rating > 5)
-                                {
-                                    $rating = 5;
-                                }
-                                else
-                                {
-                                    $rating = $product->average_rating;
-                                }
-                             for($i = 0; $i < $rating; $i++):?>
-                                <i class="fas fa-star rated"></i>
-                            <?php endfor;?>
-
-                            <?php if($i < 4):?>
-                                <?php $j = 4 - $i;
-                                    for($k = 0; $k <=  $j; $k++):?>
-                                        <i class="fas fa-star unrated"></i>
+                                <?php
+                                    if($product->average_rating > 5)
+                                    {
+                                        $rating = 5;
+                                    }
+                                    else
+                                    {
+                                        $rating = $product->average_rating;
+                                    }
+                                for($i = 0; $i < $rating; $i++):?>
+                                    <i class="fas fa-star rated"></i>
                                 <?php endfor;?>
-                            <?php endif;?>
+
+                                <?php if($i < 4):?>
+                                    <?php $j = 4 - $i;
+                                        for($k = 0; $k <=  $j; $k++):?>
+                                            <i class="fas fa-star unrated"></i>
+                                    <?php endfor;?>
+                                <?php endif;?>
                                 
                             </div>
                             <div class="product-rating-average">
@@ -168,66 +174,69 @@
                             Reviews
                         </div>
                         <div class="review-body">
-                        <?php foreach($reviews as $review):?>
-                            <div class="user-reviews">
-                                <div class="user-review">
-                                    <div class="user-avatar">
-                                        <img src="<?php echo BASE_URI;?>images/avatars/<?php echo $review->image?>" alt="">
-                                    </div>
-                                    <div class="user-info-review-body">
-                                        <div class="user-name-review-date-rating">
-                                            <div class="name-and-date">
-                                                <div class="user-name">
-                                                    <strong><?php echo $review->first_name;?> <?php echo $review->last_name;?></strong>
-                                                </div>
-                                                <div class="review-date">
-                                                    <!-- April 8, 2020 -->
-                                                    <?php echo CustomFormatDate($review->created_date);?>
-                                                </div>
+                            <?php if($reviewsCount > 0):?>
+                                <?php foreach($reviews as $review):?>
+                                    <div class="user-reviews">
+                                        <div class="user-review">
+                                            <div class="user-avatar">
+                                                <img src="<?php echo BASE_URI;?>images/avatars/<?php echo $review->image?>" alt="">
                                             </div>
-                                            <div class="user-rating">
-                                                <div class="product-rating">
-                                                    <?php
-                                                        if($review->rating > 5)
-                                                        {
-                                                            $rating = 5;
-                                                        }
-                                                        else
-                                                        {
-                                                            $rating = $review->rating;
-                                                        }
-                                                    for($i = 0; $i < $rating; $i++):?>
-                                                        <i class="fas fa-star rated"></i>
-                                                    <?php endfor;?>
+                                            <div class="user-info-review-body">
+                                                <div class="user-name-review-date-rating">
+                                                    <div class="name-and-date">
+                                                        <div class="user-name">
+                                                            <strong><?php echo $review->first_name;?> <?php echo $review->last_name;?></strong>
+                                                        </div>
+                                                        <div class="review-date">
+                                                            <!-- April 8, 2020 -->
+                                                            <?php echo CustomFormatDate($review->created_date);?>
+                                                        </div>
+                                                    </div>
+                                                    <div class="user-rating">
+                                                        <div class="product-rating">
+                                                            <?php
+                                                                if($review->rating > 5)
+                                                                {
+                                                                    $rating = 5;
+                                                                }
+                                                                else
+                                                                {
+                                                                    $rating = $review->rating;
+                                                                }
+                                                            for($i = 0; $i < $rating; $i++):?>
+                                                                <i class="fas fa-star rated"></i>
+                                                            <?php endfor;?>
 
-                                                    <?php if($i < 5):?>
-                                                        <?php $j = 4 - $i;
-                                                            for($k = 0; $k <=  $j; $k++):?>
-                                                                <i class="fas fa-star unrated"></i>
-                                                        <?php endfor;?>
-                                                    <?php endif;?>
+                                                            <?php if($i < 5):?>
+                                                                <?php $j = 4 - $i;
+                                                                    for($k = 0; $k <=  $j; $k++):?>
+                                                                        <i class="fas fa-star unrated"></i>
+                                                                <?php endfor;?>
+                                                            <?php endif;?>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="review-body">
+                                                    <?php echo $review->review_body;?>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="review-body">
-                                            <?php echo $review->review_body;?>
-                                        </div>
                                     </div>
-                                </div>
-                            </div>
-                        <?php endforeach;?>
-
+                                <?php endforeach;?>
+                            <?php else:?>
+                                <h2 class="no-reviews-available">No reviews Available</h2>
+                            <?php endif;?>
                         </div>
                         <div class="add-new-review">
                             <form>
                                 <label>Your rating</label>
                                 <div class="get-rating">
                                     <div class="product-rating">
-                                        <i class="fas fa-star unrated"></i>
-                                        <i class="fas fa-star unrated"></i>
-                                        <i class="fas fa-star unrated"></i>
-                                        <i class="fas fa-star unrated"></i>
-                                        <i class="fas fa-star unrated"></i>
+                                    <i class="fas fa-star unrated"></i>
+                                    <i class="fas fa-star unrated"></i>
+                                    <i class="fas fa-star unrated"></i>
+                                    <i class="fas fa-star unrated"></i>
+                                    <i class="fas fa-star unrated"></i>
                                     </div>
                                 </div>
                                 <br>
@@ -250,7 +259,7 @@
                         <ul class="productsLightSlider" class="cs-hidden">
                             <?php foreach($relatedByCategory as $relatedProduct):?>
                                 <!-- Product-box starts here  -->
-                            <li class="item-a">        
+                            <li class="item-a">
                                 <div class="product-box">
                                     <div class="product-img">
                                         <a href="<?php BASE_URI;?>product.php?product=<?php echo $product->id?>"><img src="<?php echo BASE_URI;?>images/products/<?php echo $relatedProduct->image;?>" alt=""></a>
@@ -279,7 +288,7 @@
                                         <?php endif;?>
                                         
                                     </div>
-                                    <div class="product-tags">
+                                    <div class="product-categories">
                                         <a href="#">Jackets,</a>
                                         <a href="#">Men</a>
                                     </div>
@@ -294,12 +303,26 @@
                                         <?php endif;?>
                                     </div>
                                     <div class="product-rating">
-                                        <i class="fas fa-star rated"></i>
-                                        <i class="fas fa-star rated"></i>
-                                        <i class="fas fa-star rated"></i>
-                                        <i class="fas fa-star unrated"></i>
-                                        <i class="fas fa-star unrated"></i>
-                                    </div>
+                                        <?php
+                                            if($relatedProduct->average_rating > 5)
+                                            {
+                                                $rating = 5;
+                                            }
+                                            else
+                                            {
+                                                $rating = $relatedProduct->average_rating;
+                                            }
+                                            for($i = 0; $i < $rating; $i++):?>
+                                                <i class="fas fa-star rated"></i>
+                                        <?php endfor;?>
+
+                                        <?php if($i < 5):?>
+                                            <?php $j = 4 - $i;
+                                                for($k = 0; $k <=  $j; $k++):?>
+                                                    <i class="fas fa-star unrated"></i>
+                                            <?php endfor;?>
+                                        <?php endif;?>
+                                        </div>
                                     <div class="product-add-cart-button">
                                         <button>Add to cart</button>
                                     </div>
@@ -318,5 +341,9 @@
 
         <!-- Main bottom section Starts Here -->
         <div class="main-bottom-content">
+
+        </div>
+
+    <script src="<?php echo BASE_URI;?>templates/js/single_product.js"></script>
 
 <?php include('includes/footer.php');?>

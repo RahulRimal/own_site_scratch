@@ -12,5 +12,6 @@ require_once('helpers/db_helper.php');
 
 //Autoload Classes
 function __autoload($class_name){
-	require_once('libraries/'.$class_name . '.php');
+	require_once('C:\xampp\htdocs/ownSiteScratch/libraries/'.$class_name . '.php');
+	// require_once('libraries/'.$class_name . '.php');
 }
