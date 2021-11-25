@@ -8,4 +8,4 @@ define("DB_NAME", "own_site_scratch");
 define("SITE_TITLE", "Welcome To Sabaekobazar");
 
 //Paths
-define ('BASE_URI', 'http://'.$_SERVER['SERVER_NAME'].'/OwnSiteScratch/');
+define ('BASE_URI', 'http://'.$_SERVER['SERVER_NAME'].'/SabaekoBazar/own_site_scratch/');

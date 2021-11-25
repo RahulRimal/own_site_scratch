@@ -11,8 +11,6 @@
   
   <script src="https://kit.fontawesome.com/26d4a64054.js" crossorigin="anonymous"></script>
 
-  
-
 </head>
 <body>
 
