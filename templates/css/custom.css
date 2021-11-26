@@ -25,8 +25,8 @@ body
 
 a
 {
-	text-decoration: none;
-	color: black;
+	text-decoration: none!important;
+	color: black!important;
 }
 
 ul
@@ -49,53 +49,16 @@ ul
 
 /* Topbar Starts Here */
 
-
-#topbar
-{
-	width: 100%;
-	height: 30px;
-	line-height: 30px;
-	background: var(--primary-color);
-	border-bottom: 1px solid white;
-}
-
-
-.topbar-contents
-{
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	color: white;
-}
-
-
-.topbar-content p
-{
-	letter-spacing: 2px;
-}
-
-
-.topbar-social ul
-{
-	list-style: none;
-	display: flex;
-}
-
 .topbar-social-icons a
 {
-	color: white;	
+	color: var(--primary-color)!important;
 }
 
 .topbar-social-icons a:hover
 {
-	color: black
+	color: black!important;
+	font-size: 20px;
 }
-
-.topbar-social li
-{
-	margin-right: 10px;
-}
-
 
 /* Topbar Ends Here */
 
@@ -104,26 +67,8 @@ ul
 
 #header
 {
-	width: 100%;
-	height: 80px;
 	background: var(--primary-color);
 	text-align: center;
-}
-
-.main-header
-{
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	padding-top: 13px;
-
-}
-
-.header-logo-section img
-{
-	height: auto;
-	width: 55%;
-	margin-left: -115px;
 }
 
 .header-search-section
@@ -135,7 +80,8 @@ ul
 .header-search-section select, .header-search-section button
 {
 	position: absolute;
-	height: 34px;
+	height: 30px;
+	line-height: 15px;
 	top: 0;
 }
 
@@ -167,7 +113,7 @@ ul
 {
 	width: 550px;
 	height: 30px;
-    padding: 0 75px;
+    padding: 0 85px;
 }
 
 .header-search-section input:focus
@@ -175,19 +121,6 @@ ul
 	border-style: inset;
 }
 
-.header-breadcrumbs-sectios
-{
-	float: right;
-	display: flex;
-	justify-content: space-evenly;
-	align-items: center;
-}
-
-.header-breadcrumbs-sectios div
-{
-	padding: 0 15px;
-	border-right: 2px solid white;
-}
 
 .header-breadcrumbs-sectios div a:hover
 {
@@ -198,6 +131,14 @@ ul
 {
 	font-size: 16px;
 }
+
+.header-breadcrumbs-sectios h5:hover
+{
+	color: white;
+}
+
+.header-breadcrumbs-sectios
+
 
 .header-account h5
 {
@@ -218,10 +159,10 @@ ul
 .cart-item-count
 {
 	position: absolute;
-    top: 44px;
-    left: 94%;
-	background: red;
-	color: white;
+    top: -15px;
+    left: 65%;
+    background: red;
+    color: white;
     border-radius: 50px;
     padding: 3px 6px;
 }
@@ -269,6 +210,31 @@ ul
 {
 	text-align: left;
 }
+
+
+
+@media only screen and (max-width: 991px)
+{
+	.header-logo-section img
+	{
+		width: 50%;
+		margin: 5px 0;
+	}
+
+	.header-search-section
+	{
+		margin-left: -2%!important;
+	}
+
+	.header-search-section input
+	{
+		width: 288px;
+    height: 30px;
+    padding: 0 0 0 87px;
+	}
+}
+
+
 /* Header Ends Here */
 
 /* Main Sections Starts Here */
