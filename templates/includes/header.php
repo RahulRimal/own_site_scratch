@@ -28,8 +28,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-8 col-md-6" style="height: 40px; line-height:40px;">
-                    <div class="topbar-content">
-                        <p><span><i class="fas fa-envelope" style="color: var(--primary-color);"></i></span> contact@SabaekoBazar.com</p>
+                    <div class="topbar-content text-white">
+                        <p><span><i class="fas fa-envelope"></i></span> contact@sabaekoBazar.com</p>
                     </div>
                 </div>
                 <div class="col-4 col-md-6" style="height: 40px; line-height:40px;">
@@ -65,7 +65,7 @@
             <div class="main-header">
                 <div class="row mx-1 d-flex justify-content-between">
                     <div class="col-12 col-md-2" style="align-self: center;">
-                        <div class="header-logo-section">
+                        <div class="header-logo-section py-1">
                             <img src="<?php echo BASE_URI; ?>images/logoalternate.png" width="100%" alt="">
                         </div>
                     </div>
@@ -87,7 +87,7 @@
                     <div class="col-12 col-md-3 d-flex justify-content-start" style="align-self: center;">
                         <div class="header-breadcrumbs-sectios my-5 my-md-0 w-100">
                             <div class="row">
-                                <div class="col-5 col-md-5" style="align-self: center;">
+                                <div class="col-5 col-md-5" style="align-self: center; border-right: 2px solid white;">
                                     <div class="header-wishlist">
                                         <p>My Favourite</p>
                                         <a href="">
@@ -97,7 +97,7 @@
                                     </div>
                                 </div>
 
-                                <div class="col-5 col-md-5" style="align-self: center;">
+                                <div class="col-5 col-md-5" style="align-self: center; border-right: 2px solid white;">
                                     <div class="header-account">
                                         <p>Login/SignUp</p>
                                         <a href="">
@@ -106,11 +106,11 @@
                                     </div>
                                 </div>
                                 <div class="col-2 col-md-2" style="align-self: center;">
-                                <div class="header-cart">
-                                    <a href=""><i class="fas fa-shopping-cart"></i>
-                                        <h6 class="cart-item-count">0</h6>
-                                    </a>
-                                </div>
+                                    <div class="header-cart">
+                                        <a href=""><i class="fas fa-shopping-cart"></i>
+                                            <h6 class="cart-item-count">0</h6>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -119,35 +119,53 @@
             </div>
         </div>
     </header>
+    <!-- Main nav starts here -->
     <div class="main-nav">
-        <div class="nav-content">
-            <ul>
-                <li></li><a href="<?php echo BASE_URI; ?>">Home</a></li>
-                <li></li><a href="<?php echo BASE_URI; ?>blog.php">News</a></li>
-                <li></li><a href="<?php echo BASE_URI; ?>store.php">Shop</a></li>
-                <li></li><a href="<?php echo BASE_URI; ?>cart.php">Cart</a></li>
-                <li></li><a href="<?php echo BASE_URI; ?>checkout.php">Checkout</a></li>
-                <li></li><a href="<?php echo BASE_URI; ?>profile.php">My Account</a></li>
-            </ul>
-        </div>
-        <div class="nav-breadcrumbs">
-            <div class="nav-breadcrumbs-call-icon">
-                <i class="fas fa-phone-alt"></i>
-                <div class="nav-breadcrumbs-call-content">
-                    <ul>
-                        <li>Call To</li>
-                        <li class="call-number">
-                            <strong>977-9846375829</strong>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container">
+                <a class="navbar-brand" href="#"></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link font-weight-bold" href="<?php echo BASE_URI; ?>">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link font-weight-bold" href="<?php echo BASE_URI; ?>blog.php">News</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link font-weight-bold" href="<?php echo BASE_URI; ?>store.php">Shop</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link font-weight-bold" href="<?php echo BASE_URI; ?>cart.php">Cart</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link font-weight-bold" href="<?php echo BASE_URI; ?>checkout.php">Checkout</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link font-weight-bold" href="<?php echo BASE_URI; ?>profile.php">My Account</a>
                         </li>
                     </ul>
+                    <div class="nav-breadcrumbs text-center">
+                        <div class="nav-breadcrumbs-call-icon">
+                            <i class="fas fa-phone-alt icon"></i>
+                            <div class="nav-breadcrumbs-call-content">
+                                <ul>
+                                    <li>Call To</li>
+                                    <li class="call-number">
+                                        <strong>977-9846375829</strong>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </nav>
+
+        <!-- Main nav starts here -->
     </div>
     <!-- Header Ends Here -->
-
-    <!-- Main section starts here -->
-    <section id="main">
-        <main>
-            <!-- Main top section Starts Here -->
-            <div class="main-top-content">

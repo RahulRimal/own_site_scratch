@@ -44,17 +44,28 @@ ul
 	display: block!important;;
 }
 
+.icon
+{
+	color: var(--primary-color)!important;
+}
+
 /* Important CSS sections ends here */
 
 
 /* Topbar Starts Here */
 
-.topbar-social-icons a
+#topbar
 {
-	color: var(--primary-color)!important;
+	background: var(--primary-color);
+	border-bottom: 1px solid white;
 }
 
-.topbar-social-icons a:hover
+.topbar-social-icons i
+{
+	color: white;
+}
+
+.topbar-social-icons i:hover
 {
 	color: black!important;
 	font-size: 20px;
@@ -164,53 +175,8 @@ ul
     background: red;
     color: white;
     border-radius: 50px;
-    padding: 3px 6px;
+    padding: 0 5px;
 }
-
-
-.main-nav
-{
-	background: white;
-	padding: 15px 15%;
-
-}
-
-.nav-content ul
-{
-	display: flex;
-}
-
-.nav-content ul li
-{
-	display: inline-block;
-	margin: 5px 10px;
-}
-
-.nav-content ul a:hover
-{
-	color: var(--primary-color);
-}
-
-.nav-breadcrumbs-call-icon
-{
-	display: flex;
-	float: right;
-	align-items: center;
-	margin-top: -30px;
-}
-
-.nav-breadcrumbs-call-icon i
-{
-	font-size: 28px;
-	color: var(--primary-color);
-	margin-right: 10px;
-}
-
-.nav-breadcrumbs-call-content ul
-{
-	text-align: left;
-}
-
 
 
 @media only screen and (max-width: 991px)
@@ -234,23 +200,10 @@ ul
 	}
 }
 
-
 /* Header Ends Here */
 
 /* Main Sections Starts Here */
-
-#main
-{
-	overflow: hidden;
-	margin: 50px 50px;
-}
-
-.main-top-content
-{
-	width: 100%;
-	text-align: -webkit-center;
-}
-
+ 
 .sidebar-widget h4, .sidebar-widget a 
 {
 	text-align: left;
@@ -284,13 +237,6 @@ ul
 
 /* Left Sidebar Starts Here */
 
-.left-sidebar, .right-sidebar
-{
-	width: 20%;
-	display: inline;
-	float: left;
-}
-
 
 /* Left Sidebar Ends Here */
 
@@ -299,20 +245,11 @@ ul
 
 /* Main-boxed-Content Section Starts Here */
 
-.main-boxed-content
-{
-	width: 50%;
-	display: inline;
-	float: left;
-	padding: 0 70px;
-}
-
-.main-carousel #lightSlider
+/* .main-carousel #lightSlider
 {
 	width: 115pc;
-	/* width: 300px; */
 	height: 245px;
-}
+} */
 
 .main-carousel img
 {
@@ -320,15 +257,12 @@ ul
 	height: 245px;
 }
 
+
 .new-collection-offer-banner
 {
-	height: 60px;
 	background: var(--primary-color);
 	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 0 80px;
-	margin: 20px 0;
+	justify-content: space-around;
 }
 
 .new-collection-offer-banner a
@@ -526,6 +460,7 @@ ul
 
 
 /* .product-box .product-rating .rated, .product-description-section .product-rating .rated */
+
 .product-rating .rated 
 {
 	color: var(--primary-color);
@@ -554,11 +489,6 @@ ul
 /* Right Sidebar Starts Here */
 
 
-.right-sidebar
-{
-    float: right;
-}
-
 .sidebar-share
 {
 	display: flex;
@@ -572,20 +502,21 @@ ul
 	font-size: 13px;
 }
 
+
 .sidebar-share .share-icon
 {
 	background:  #EBEBEB;
 	height: 100%;
 	padding-left: 17px;
-	margin-right: 5px;
+	margin-right: 15px;
 	display: flex;
 	align-items: center;
 
 }
 
-#main-section > div.right-sidebar > div > div > div > div.widget-body > ul > li:nth-child(1) > a > div > div
+.sidebar-share p
 {
-	padding-left: 10px;
+	margin: 0;
 }
 
 .widget-social-share .widget-body a:hover .share-icon i
@@ -600,15 +531,11 @@ ul
 	color: var(--primary-color);
 	font-weight: bold;
 }
+
 /* Right Sidebar Ends Here */
 
 
 /* Main-wide-Content Section Starts Here */
-
-.main-wide-content
-{
-	width: 100%;
-}
 
 
 /* Main-wide-Content Section Ends Here */
@@ -913,8 +840,6 @@ ul
 
 .shop-main-boxed-content
 {
-	width: 70%;
-	float: right;
 	text-align: center;
 	background: white;
 	margin: 30px 0;
@@ -926,7 +851,7 @@ ul
 	background: none;
 }
 
-.shop-main-boxed-content .product-box
+ .shop-main-boxed-content .product-box
 {
 	width: 225px;
 	height: 350px;
@@ -951,6 +876,7 @@ ul
 	background: white;
 	display: flex;
 }
+
 
 .product-main-wide-content .product-description-section .product-categories, .product-main-wide-content .product-description-section .product-sub-categories
 {
